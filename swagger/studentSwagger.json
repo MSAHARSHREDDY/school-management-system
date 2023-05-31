@@ -1,0 +1,224 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "School Management System",
+    "description": "<b>Please find below routes</b><ul><li><a href='http://localhost:5000/teacher-document'><b>Teacher Routes</b></a></li><li><a href='http://localhost:5000/admin-document'><b>Admin Routes</b></a></li></ul>.</p>"
+  },
+
+  "host": "localhost:5000",
+  "tags": [],
+  "schemes": ["http", "https"],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter your access token in the format 'Bearer &lt;token&gt;'"
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+
+
+
+  "paths": {
+    "/student/registration": {
+      "post": {
+        "tags": ["student"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "name": {
+                  "example": ""
+                },
+                "email": {
+                  "example": ""
+                },
+                "mobile": {
+                  "example": ""
+                },
+                "password": {
+                  "example": ""
+                },
+                "confirmPassword": {
+                  "example": ""
+                },
+                "class": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/student/verifyOTP": {
+        "post": {
+          "tags": ["student"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  
+                  "class": {
+                    "example": ""
+                  },
+                  "otp": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/student/studentLogin": {
+        "post": {
+          "tags": ["student"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  
+                  "class": {
+                    "example": ""
+                  },
+                  "email": {
+                    "example": ""
+                  },
+                  "password":{
+                    "example": ""
+                   }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/student/forgotPassword": {
+        "post": {
+          "tags": ["student"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "class": {
+                    "example": ""
+                  },
+                  "email": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/student/changePassword": {
+        "put": {
+          "tags": ["student"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "class": {
+                    "example": ""
+                  },
+                  "email": {
+                    "example": ""
+                  },
+                  "password": {
+                    "example": ""
+                  },
+                  "confirmPassword": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/student/updateProfile": {
+        "put": {
+          "tags": ["student"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "name": {
+                    "example": ""
+                  },
+                  "email": {
+                    "example": ""
+                  },
+                  "mobile": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/student/dashboard": {
+        "get": {
+          "tags": ["student"],
+          "description": "",
+          "responses": {}
+        }
+      },
+      "/student/attendance": {
+        "get": {
+          "tags": ["student"],
+          "description": "",
+          "responses": {}
+        }
+      },
+      "/student/viewMarks": {
+        "get": {
+          "tags": ["student"],
+          "description": "",
+          "responses": {}
+        }
+      }
+
+      
+
+
+
+
+  }
+  
+}
+
+

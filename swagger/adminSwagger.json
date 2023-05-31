@@ -1,0 +1,204 @@
+{
+    "swagger": "2.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "School Management System",
+      "description": "<b>Please find below routes</b><ul><li><a href='http://localhost:5000/teacher-document'><b>Teacher Routes</b></a></li><li><a href='http://localhost:5000/student-document'><b>student Routes</b></a></li></ul>.</p>"
+    },
+  
+    "host": "localhost:5000",
+    "tags": [],
+    "schemes": ["http", "https"],
+    
+    "securityDefinitions": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "Enter your access token in the format 'Bearer &lt;token&gt;'"
+      }
+    },
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+  
+    "paths": {
+      "/admin/registration": {
+        "post": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "name": {
+                    "example": ""
+                  },
+                  "email": {
+                    "example": ""
+                  },
+                  "mobile": {
+                    "example": ""
+                  },
+                  "password": {
+                    "example": ""
+                  },
+                  "confirmPassword": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/verifyOTP": {
+        "post": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "otp": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/adminLogin": {
+        "post": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "email": {
+                    "example": ""
+                  },
+                  "password": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/forgotPassword": {
+        "post": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "email": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/changePassword": {
+        "put": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "email": {
+                    "example": ""
+                  },
+                  "password": {
+                    "example": ""
+                  },
+                  "confirmPassword": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/dashboard": {
+        "get": {
+          "tags": ["admin"],
+          "description": "",
+          "responses": {}
+        }
+      },
+      "/admin/deleteStudent": {
+        "delete": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "class": {
+                    "example": ""
+                  },
+                  "studentId": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      },
+      "/admin/deleteTeacher": {
+        "delete": {
+          "tags": ["admin"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "obj",
+              "in": "body",
+              "schema": {
+                "properties": {
+                  "teacherId": {
+                    "example": ""
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {}
+        }
+      }
+  
+  
+      
+    }
+  }
+  

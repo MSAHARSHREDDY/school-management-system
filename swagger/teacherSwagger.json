@@ -1,0 +1,334 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "School Management System",
+    "description": "<b>Please find below routes</b><ul><li><a href='http://localhost:5000/student-document'><b>Student Routes</b></a></li><li><a href='http://localhost:5000/admin-document'><b>Admin Routes</b></a></li></ul>.</p>"
+  },
+
+  "host": "localhost:5000",
+  "tags": [],
+  "schemes": ["http", "https"],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Enter your access token in the format 'Bearer &lt;token&gt;'"
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+
+  "paths": {
+    "/teacher/registration": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "name": {
+                  "example": ""
+                },
+                "email": {
+                  "example": ""
+                },
+                "mobile": {
+                  "example": ""
+                },
+                "password": {
+                  "example": ""
+                },
+                "confirmPassword": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/verifyOTP": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "otp": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/studentLogin": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "email": {
+                  "example": ""
+                },
+                "password": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/forgotPassword": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "email": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/changePassword": {
+      "put": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "email": {
+                  "example": ""
+                },
+                "password": {
+                  "example": ""
+                },
+                "confirmPassword": {
+                  "example": ""
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/grade": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "gradesInfo": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "example": ""
+                      },
+                      "end": {
+                        "example": ""
+                      },
+                      "grade": {
+                        "example": ""
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    
+    "/teacher/studentAttendance": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "class": {
+                  "example": ""
+                },
+                "attendanceData": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "studentId": {
+                        "example": ""
+                      },
+                      "rollNo": {
+                        "example": ""
+                      },
+                      "attendance": {
+                        "example": "enter boolean value"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/viewStudentAttendance": {
+      "get": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "class",
+            "in": "query",
+            "schema": {
+              "properties": {
+                
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/studentMarks": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "class": {
+                  "example": ""
+                },
+                "marksData": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "studentId": {
+                        "example": ""
+                      },
+                      "telugu": {
+                        "example": ""
+                      },
+                      "hindi": {
+                        "example": "enter boolean value"
+                      },
+                      "english": {
+                        "example": "enter boolean value"
+                      },
+                      "math": {
+                        "example": "enter boolean value"
+                      },
+                      "science": {
+                        "example": "enter boolean value"
+                      }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/viewStudentMarks": {
+      "get": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "class",
+            "in": "query",
+            "schema": {
+              "properties": {
+                
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/teacher/notice": {
+      "post": {
+        "tags": ["teacher"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "properties": {
+                "class": {
+                  "example": ""
+                },
+                "subject": {
+                  "example": ""
+                },
+                "notice": {
+                  "example": ""
+                }
+
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+
+
+    
+  }
+}
