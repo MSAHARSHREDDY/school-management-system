@@ -34,5 +34,5 @@ app.use('/teacher-document', swaggerUI.serveFiles(teacherSwaggerDocument, option
 app.use('/admin-document', swaggerUI.serveFiles(adminSwaggerDocument, options), swaggerUI.setup(adminSwaggerDocument));
 
 app.listen(port,()=>{
-    console.log(`listening on port ${port}`)
+    console.log(`Node Server Running In ${process.env.DEV_MODE} Mode on port no ${port}`)
 })
