@@ -1,4 +1,5 @@
 const dotenv=require("dotenv")
+const cors=require("cors")
 dotenv.config()
 const express=require("express")
 const studentRouter=require("./routes/studentRoutes")
@@ -17,6 +18,7 @@ const port=process.env.port
 connectDB()
 
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended:false }))
 
 app.use("/student",studentRouter)
